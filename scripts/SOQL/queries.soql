@@ -1,0 +1,15 @@
+// query PlatformEventUsageMetric, works only when PlatformEventSettings.enableEnhancedUsageMetrics = false
+
+SELECT Name, StartDate, EndDate, Value 
+FROM PlatformEventUsageMetric
+
+//---------------------------------------------------------------------------------------------
+// query enhansed PlatformEventUsageMetric, works only when PlatformEventSettings.enableEnhancedUsageMetrics = true
+
+SELECT EventName, EventType, UsageType, Value, StartDate, EndDate 
+FROM PlatformEventUsageMetric 
+WHERE TimeSegment='Hourly'
+
+SELECT EventName, EventType, UsageType, Value, StartDate, EndDate 
+FROM PlatformEventUsageMetric 
+WHERE TimeSegment='Daily'
